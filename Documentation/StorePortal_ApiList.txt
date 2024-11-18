@@ -1,0 +1,89 @@
+All the store portal apis will start with "/store"
+
+Public
+=======
+Login (email, password) 	- by admins of stores
+Register (All the necessary parameters for store model, super admin account will be created in this step)
+
+
+
+Secure (Only the store admin from related store can access)
+======
+	[Store Domain]
+	store_admin
+		- Create (By all admins)
+		- Update (By super_admin and self)
+		- Delete (By super_admin and self)
+		- Details (By all admins)
+		- List (By all admins)
+
+	store_profile
+		- Edit (By all admins)
+		- Delete (By super admin)
+		- Details
+
+	store_theme
+		- Create
+		- Update
+		- Delete
+		- Details
+
+	feature_stores
+		- Request
+		- Respond
+		- Remove
+		- List
+
+	followers
+		- List
+		- Block
+
+
+	[Product Domain]
+	product_category
+		- Create
+		- Update
+		- Delete (Will affect all of its child products)
+		- Details
+		- List
+
+	product
+		- Create
+		- Update
+		- Delete
+		- Details
+		- List
+
+	promotion (many to many with products. But same product can only have one relation with same promotion)
+		- Create
+		- Update
+		- Delete (remove all the relations with products)
+		- Details
+		- List
+		- Add product to promotion
+		- Remove product from promotion
+
+	event (Event is the parent position of promotions and posts, but  a promotions and posts can exist without event)
+		- Create
+		- Update
+		- Delete (its children will not be affected)
+		- Details
+		- List
+		- Add promotion to event
+		- Remove promotion from event
+
+
+	[Media Domain]
+	community_post
+		- Create
+		- Update
+		- Delete
+		- Details
+		- List
+		- Report
+
+
+
+
+
+
