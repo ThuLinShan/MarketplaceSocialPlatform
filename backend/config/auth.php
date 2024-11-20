@@ -40,8 +40,8 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'user' => [
-            'driver' => 'passport',
+        'api' => [
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
