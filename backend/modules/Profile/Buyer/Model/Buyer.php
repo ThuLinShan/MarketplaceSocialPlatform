@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Profile\Buyer\Model;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\BaseAuthenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends BaseAuthenticatable implements JWTSubject
+class Buyer extends BaseAuthenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -43,7 +44,6 @@ class User extends BaseAuthenticatable implements JWTSubject
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
     }
